@@ -1,0 +1,23 @@
+.todo-list {
+    width: 250px;
+    padding: 30px;
+    height: auto;
+}
+
+.todo-title, .todo-content {
+    width: 100%;
+}
+
+.todo-title, h2 {
+    display: flex;
+    justify-content: center;
+    background: var(--bg)
+}
+
+.todo-title {
+    
+}
+
+.todo-content, ul, li {
+    background-color: var(--bg);
+}
