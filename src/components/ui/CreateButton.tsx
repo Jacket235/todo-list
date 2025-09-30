@@ -1,10 +1,10 @@
-import './addButton.css';
+import './createButton.css';
 
 type props = {
     text: string
 }
 
-export function Button({ text }: props) {
+export function CreateButton({ text }: props) {
     return (
         <button className='button'>
             {text}

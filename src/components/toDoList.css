@@ -8,10 +8,12 @@
     display: flex;
     justify-content: center;
     border-bottom: 1px solid white;
+    padding: 2px;
 }
 
 .todo-content {
     display: flex;
+    box-sizing: border-box;
     padding: 10px;
 }
 
@@ -22,6 +24,7 @@
 .todo-content ul {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 8px;
     padding: 0;
 }
@@ -31,62 +34,36 @@
     padding: 4px;
 }
 
+.checkmark {
+    flex-shrink: 0;
+    width: 3%;
+    background: var(--highlight);
+}
+
 .todo-item {
     display: flex;
-    align-items: start; 
-    gap: 4px;
-}
-
-/* CUSTOM CHECKBOX */
-
-.custom-checkbox {
-    display: flex;
-    align-items: flex-start;
     gap: 8px;
-    cursor: pointer;
-    user-select: none;
-    color: var(--text);
 }
 
-.custom-checkbox input {
-    display: none;
-}
-
-.custom-checkbox .checkmark {
-    width: 26px;
-    height: 26px;
-    background-color: var(--bg-light);
-    border: 2px solid var(--border);
-    border-radius: 6px;
-    position: relative;
+.todo-item-checkmark {
     flex-shrink: 0;
-}
-
-.custom-checkbox input:checked + .checkmark::after {
-    content: '';
-    position: absolute;
-    left: 8px;
-    top: 4px;
-    width: 6px;
-    height: 12px;
-    border: solid var(--primary);
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
-
-.custom-checkbox:hover .checkmark {
     background-color: var(--highlight);
-    border-color: var(--primary);
+    width: 10px;
 }
 
-/* CUSTOM CHECKBOX */
+.todo-item-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
 
 .todo-item-action {
     display: flex;
     justify-content: end;
-    gap: 4px;
+    gap: 8px;
 }
- 
+
 .todo-item-action button {
     background: none;
     width: 57px;

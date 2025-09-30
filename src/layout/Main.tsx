@@ -2,20 +2,33 @@ import { ToDoList } from "../components/ToDoList";
 import './main.css';
 
 export function Main() {
-    const tasks = [
-        "sdfsrtgrtrtrtdtd rthd rthd rthd rthd rth",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eligendi dolore quis quam amet velit nihil porro veniam sint, accusantium nobis? Praesentium placeat ducimus, quo illum ex in quasi vero?",
-        "okay",
-        "hey"
+    const tasks1 = [
+        "Buy groceries: milk, bread, eggs, and coffee",
+        "Finish React project and push to GitHub",
+        "Read 20 pages of 'Clean Code'",
+        "Call mom in the evening"
     ]
 
+    const tasks2 = [
+        "Morning jog – 5km around the park",
+        "Prepare slides for Monday’s presentation",
+        "Reply to 3 client emails",
+        "Plan weekend trip itinerary"
+    ]
+
+    const tasks3 = [
+        "Organize desk and clean workspace",
+        "Watch a tutorial on Next.js",
+        "Book dentist appointment",
+        "Try new pasta recipe for dinner"
+    ]
 
     return (
         <main>
             <div className="main-content">
-                <ToDoList title={"Title"} tasks={tasks} />
-                <ToDoList title={"Title"} tasks={tasks} />
-                <ToDoList title={"Title"} tasks={tasks} />
+                <ToDoList title={"Personal Tasks"} tasks={tasks1} />
+                <ToDoList title={"Work Tasks"} tasks={tasks2} />
+                <ToDoList title={"Miscellaneous"} tasks={tasks3} />
             </div>
         </main>
     );
