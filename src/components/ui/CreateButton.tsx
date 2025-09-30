@@ -1,10 +1,6 @@
 import './createButton.css';
 
-type props = {
-    text: string
-}
-
-export function CreateButton({ text }: props) {
+export function CreateButton({ text }: { text: string }) {
     return (
         <button className='button'>
             {text}

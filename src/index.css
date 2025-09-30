@@ -12,9 +12,9 @@
     --secondary: hsl(31 62% 64%);
     --danger: hsl(9 50% 64%);
     --danger-hovered: hsla(9, 50%, 64%, 0.7);
-    --warning: hsl(52 19% 57%);
+    --warning: hsl(52 50% 57%);
     --success: hsl(146 50% 59%);
-    --info: hsl(217 28% 65%);
+    --info: hsl(217 50% 65%);
     --header-size: 55px
 }
 

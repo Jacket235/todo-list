@@ -1,12 +1,28 @@
+import { useId } from "react";
 import { ToDoList } from "../components/ToDoList";
 import './main.css';
 
-export function Main({ todos }: { todos: {title: string; tasks: string[]}[]}) {
+type Task = {
+    id: string;
+    text: string;
+}
+
+type TodoListType = {
+    id: string;
+    title: string;
+    tasks: { 
+        complete: Task[], 
+        inprogress: Task[], 
+        incomplete: Task[] 
+    };
+}
+
+export function Main({ todos }: { todos: TodoListType[] }) {
     return (
         <main>
             <div className="main-content">
                 {todos.map((todo, i) => (
-                    <ToDoList title={todo.title} tasks={todo.tasks} />
+                    <ToDoList key={todo.id} title={todo.title} tasks={todo.tasks} />
                 ))}
             </div>
         </main>

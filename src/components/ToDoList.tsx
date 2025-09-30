@@ -1,7 +1,21 @@
 import { ToDoItem } from './ToDoItem';
 import './toDoList.css';
 
-export function ToDoList({ title, tasks }: {title: string, tasks: string[]}) {
+type Task = {
+    id: string;
+    text: string;
+}
+
+type TodoListType = {
+    title: string;
+    tasks: { 
+        complete: Task[], 
+        inprogress: Task[], 
+        incomplete: Task[] 
+    };
+}
+
+export function ToDoList({ title, tasks }: TodoListType) {
     return (
         <div className="todo-list">
             <div className="todo-title">
@@ -9,9 +23,19 @@ export function ToDoList({ title, tasks }: {title: string, tasks: string[]}) {
             </div>
             <div className="todo-content">
                 <ul>
-                    {tasks.map((task, i) => (
-                        <li key={i}>
-                            <ToDoItem task={task}/>
+                    {tasks["complete"].map((task, i) => (
+                        <li key={task.id}>
+                            <ToDoItem task={task.text} status='complete'/>
+                        </li>
+                    ))}
+                    {tasks["inprogress"].map((task, i) => (
+                        <li key={task.id}>
+                            <ToDoItem task={task.text} status='inprogress'/>
+                        </li>
+                    ))}
+                    {tasks["incomplete"].map((task, i) => (
+                        <li key={task.id}>
+                            <ToDoItem task={task.text} status='incomplete'/>
                         </li>
                     ))}
                 </ul>

@@ -1,8 +1,3 @@
-.checkmark {
-    flex-shrink: 0;
-    background: var(--highlight);
-}
-
 .todo-item {
     display: flex;
     cursor: pointer;
@@ -11,8 +6,19 @@
 
 .todo-item-checkmark {
     flex-shrink: 0;
-    background-color: var(--highlight);
     width: 10px;
+}
+
+.todo-item-checkmark.complete {
+    background: var(--success);
+}
+
+.todo-item-checkmark.inprogress {
+    background: var(--info)
+}
+
+.todo-item-checkmark.incomplete {
+    background: var(--warning);
 }
 
 .todo-item-main {
