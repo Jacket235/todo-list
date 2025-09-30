@@ -1,23 +1,112 @@
 .todo-list {
-    width: 250px;
-    padding: 30px;
-    height: auto;
-}
-
-.todo-title, .todo-content {
-    width: 100%;
-}
-
-.todo-title, h2 {
-    display: flex;
-    justify-content: center;
-    background: var(--bg)
+    background: var(--bg);
+    border-radius: 5px;
+    width: 420px;
 }
 
 .todo-title {
-    
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
 }
 
-.todo-content, ul, li {
-    background-color: var(--bg);
+.todo-content {
+    display: flex;
+    padding: 10px;
+}
+
+.todo-content ul, .todo-content li {
+    list-style: none;
+}
+
+.todo-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+}
+
+.todo-content li {
+    background: var(--bg-light);
+    padding: 4px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: start; 
+    gap: 4px;
+}
+
+/* CUSTOM CHECKBOX */
+
+.custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text);
+}
+
+.custom-checkbox input {
+    display: none;
+}
+
+.custom-checkbox .checkmark {
+    width: 26px;
+    height: 26px;
+    background-color: var(--bg-light);
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--primary);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox:hover .checkmark {
+    background-color: var(--highlight);
+    border-color: var(--primary);
+}
+
+/* CUSTOM CHECKBOX */
+
+.todo-item-action {
+    display: flex;
+    justify-content: end;
+    gap: 4px;
+}
+ 
+.todo-item-action button {
+    background: none;
+    width: 57px;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-item-action button:first-child {
+    border: 2px solid var(--danger);
+}
+
+.todo-item-action button:last-child {
+    border: 2px solid var(--primary);
+}
+
+.todo-item-action button:first-child:hover {
+    background: var(--danger-hovered);
+}
+
+.todo-item-action button:last-child:hover {
+    background: var(--primary-hovered);
 }

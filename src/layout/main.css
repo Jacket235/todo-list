@@ -1,0 +1,10 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 32px;
+    width: 100%;
+    gap: 32px;
+    padding: 0 16px;
+}

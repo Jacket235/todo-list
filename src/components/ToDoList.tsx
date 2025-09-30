@@ -1,6 +1,11 @@
 import './toDoList.css';
 
-export function ToDoList() {
+type props = {
+    title: string;
+    tasks: string[];
+}
+
+export function ToDoList({ title, tasks }: props) {
     return (
         <div className="todo-list">
             <div className="todo-title">
@@ -8,10 +13,21 @@ export function ToDoList() {
             </div>
             <div className="todo-content">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    {tasks.map((task, i) => (
+                        <li key={i}>
+                            <div className='todo-item'>
+                                <label className="custom-checkbox">
+                                    <input type="checkbox" />
+                                    <span className="checkmark"></span>
+                                    { task }
+                                </label>
+                            </div>
+                            <div className='todo-item-action'>
+                                <button>Delete</button>
+                                <button>Edit</button>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
