@@ -1,11 +1,7 @@
+import { ToDoItem } from './ToDoItem';
 import './toDoList.css';
 
-type props = {
-    title: string;
-    tasks: string[];
-}
-
-export function ToDoList({ title, tasks }: props) {
+export function ToDoList({ title, tasks }: {title: string, tasks: string[]}) {
     return (
         <div className="todo-list">
             <div className="todo-title">
@@ -15,24 +11,7 @@ export function ToDoList({ title, tasks }: props) {
                 <ul>
                     {tasks.map((task, i) => (
                         <li key={i}>
-                            <div className='todo-item'>
-                                <div className='todo-item-checkmark'></div>
-                                <div className='todo-item-main'>
-                                    { task }
-                                    <div className='todo-item-action'>
-                                        <button>Delete</button>
-                                        <button>Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <div className='todo-item'>
-                                <span className="checkmark"></span>
-                                { task }
-                            </div>
-                            <div className='todo-item-action'>
-                                <button>Delete</button>
-                                <button>Edit</button>
-                            </div> */}
+                            <ToDoItem task={task}/>
                         </li>
                     ))}
                 </ul>

@@ -1,0 +1,54 @@
+.checkmark {
+    flex-shrink: 0;
+    background: var(--highlight);
+}
+
+.todo-item {
+    display: flex;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.todo-item-checkmark {
+    flex-shrink: 0;
+    background-color: var(--highlight);
+    width: 10px;
+}
+
+.todo-item-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.todo-item-action {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.todo-item-action button {
+    background: none;
+    width: 57px;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.todo-item-action button:first-child {
+    border: 2px solid var(--danger);
+}
+
+.todo-item-action button:last-child {
+    border: 2px solid var(--primary);
+}
+
+.todo-item-action button:first-child:hover {
+    background: var(--danger-hovered);
+}
+
+.todo-item-action button:last-child:hover {
+    background: var(--primary-hovered);
+}
