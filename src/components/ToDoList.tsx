@@ -1,21 +1,8 @@
 import { ToDoItem } from './ToDoItem';
 import './toDoList.css';
+import { TodoListData } from '../Types';
 
-type Task = {
-    id: string;
-    text: string;
-}
-
-type TodoListType = {
-    title: string;
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
-}
-
-export function ToDoList({ title, tasks }: TodoListType) {
+export function ToDoList({ title, tasks }: TodoListData) {
     return (
         <div className="todo-list">
             <div className="todo-title">

@@ -1,21 +1,6 @@
-import { useId } from "react";
 import { ToDoList } from "../components/ToDoList";
 import './main.css';
-
-type Task = {
-    id: string;
-    text: string;
-}
-
-type TodoListType = {
-    id: string;
-    title: string;
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
-}
+import { TodoListType } from "../Types";
 
 export function Main({ todos }: { todos: TodoListType[] }) {
     return (

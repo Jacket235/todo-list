@@ -2,21 +2,7 @@ import './App.css';
 import { Header } from './layout/Header';
 import { Main } from './layout/Main';
 import { useState, useEffect } from 'react';
-
-type Task = {
-    id: string;
-    text: string;
-}
-
-type TodoListType = {
-    id: string;
-    title: string;
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
-}
+import { TodoListType } from './Types';
 
 function App() {
     const [todos, setTodos] = useState<TodoListType[]>([]);
