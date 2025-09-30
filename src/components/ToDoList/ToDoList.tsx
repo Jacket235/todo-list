@@ -1,6 +1,6 @@
-import { ToDoItem } from './ToDoItem';
+import { ToDoItem } from '../ToDoItem/ToDoItem';
+import { TodoListData } from '../../Types';
 import './toDoList.css';
-import { TodoListData } from '../Types';
 
 export function ToDoList({ title, tasks }: TodoListData) {
     return (

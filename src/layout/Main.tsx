@@ -1,4 +1,4 @@
-import { ToDoList } from "../components/ToDoList";
+import { ToDoList } from "../components/ToDoList/ToDoList";
 import './main.css';
 import { TodoListType } from "../Types";
 
