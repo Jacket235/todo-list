@@ -5,12 +5,12 @@ export function Main() {
     const tasks1 = [
         "Buy groceries: milk, bread, eggs, and coffee",
         "Finish React project and push to GitHub",
+        "Morning jog – 5km around the park",
         "Read 20 pages of 'Clean Code'",
         "Call mom in the evening"
     ]
 
     const tasks2 = [
-        "Morning jog – 5km around the park",
         "Prepare slides for Monday’s presentation",
         "Reply to 3 client emails",
         "Plan weekend trip itinerary"

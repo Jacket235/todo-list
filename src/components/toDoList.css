@@ -1,4 +1,7 @@
 .todo-list {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
     background: var(--bg);
     border-radius: 5px;
     width: 420px;
