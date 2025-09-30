@@ -15,7 +15,8 @@
     --warning: hsl(52 50% 57%);
     --success: hsl(146 50% 59%);
     --info: hsl(217 50% 65%);
-    --header-size: 55px
+    --header-size: 55px;
+    --button-hover: hsla(0, 0%, 90%, .2)
 }
 
 *, body {

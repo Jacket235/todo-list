@@ -7,6 +7,9 @@ export function ToDoList({ title, tasks }: TodoListData) {
         <div className="todo-list">
             <div className="todo-title">
                 <h2>{ title }</h2>
+                <button>
+                    <img src='cogwheel.svg' width="16px" height="16px" />
+                </button>
             </div>
             <div className="todo-content">
                 <ul>
