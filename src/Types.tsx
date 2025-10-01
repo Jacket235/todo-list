@@ -66,3 +66,8 @@ export type ToDoContentType = {
         incomplete: Task[] 
     };
 }
+
+export type TaskSectionType = {
+    tasks: Task[];
+    status: string;
+}
