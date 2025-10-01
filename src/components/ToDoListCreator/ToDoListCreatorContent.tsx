@@ -6,8 +6,8 @@ import { ToDoListTasks } from './ToDoListTasks'
 export function ToDoListCreatorContent() {
     return(
         <div className="popup-content">
-           <TitleInput />
-           <ToDoListTasks />
+            <TitleInput />
+            <ToDoListTasks />
             <ToDoListAction />
         </div>
     );
