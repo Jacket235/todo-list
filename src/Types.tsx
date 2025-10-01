@@ -1,3 +1,7 @@
+import { ReactElement } from "react";
+import { ToDoListCreator } from "./components/ToDoListCreator/ToDoListCreator";
+import { ToDoListEdit } from "./components/ToDoListEdit/ToDoListEdit";
+
 export type Task = {
     id: string;
     text: string;
@@ -7,8 +11,9 @@ export type CreateButtonProps = {
     text: string;
 }
 
+type OverlayChildType = ReactElement<typeof ToDoListCreator> | ReactElement<typeof ToDoListEdit> | null;
 export type OverlayContextType = {
-    openOverlay: (child: React.ReactNode) => void;
+    openOverlay: (child: OverlayChildType) => void;
     closeOverlay: () => void;
 };
 
@@ -47,4 +52,17 @@ export type CheckmarkType = {
 
 export type TodoItemMainType = {
     task: string;
+}
+
+export type ToDoListTitleType = {
+    title: string;
+    handleEditList: () => void;
+}
+
+export type ToDoContentType = {
+    tasks: { 
+        complete: Task[], 
+        inprogress: Task[], 
+        incomplete: Task[] 
+    };
 }
