@@ -1,0 +1,29 @@
+.todo-title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid white;
+    padding: 2px;
+}
+
+.todo-title button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .2s ease, background .1s ease; 
+    padding: 8px;
+    border-radius: 999px;
+    left: calc(100% - 32px);
+}
+
+.todo-title:hover button {
+    opacity: 1;
+}
+
+.todo-title button:hover {
+    background: var(--button-hover);
+}

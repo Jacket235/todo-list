@@ -1,8 +1,8 @@
-import './toDoListManager.css'
+import './toDoListEdit.css'
 
 export function ToDoListEdit() {
     return (
-        <div>
+        <div className="todo-list-edit">
             Edit todo lists.
         </div>
     );

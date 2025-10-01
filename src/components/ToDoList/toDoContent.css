@@ -1,0 +1,22 @@
+.todo-content {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.todo-content ul, .todo-content li {
+    list-style: none;
+}
+
+.todo-content ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    padding: 0;
+}
+
+.todo-content li {
+    background: var(--bg-light);
+    padding: 4px;
+}
