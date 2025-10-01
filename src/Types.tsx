@@ -3,6 +3,15 @@ export type Task = {
     text: string;
 }
 
+export type CreateButtonProps = {
+    text: string;
+}
+
+export type OverlayProps = {
+    onClose: () => void;
+    children: React.ReactNode;
+};
+
 export type TodoListType = {
     id: string;
     title: string;
