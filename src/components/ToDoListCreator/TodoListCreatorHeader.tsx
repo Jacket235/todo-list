@@ -1,8 +1,8 @@
-import './popupHeader.css';
+import './todoListCreatorHeader.css';
 import { useContext } from 'react';
 import OverlayContext from '../../Context/OverlayContext';
 
-export function PopupHeader() {
+export function TodoListCreatorHeader() {
     const overlay = useContext(OverlayContext);
 
     const handleClosePopup = () => {

@@ -9,12 +9,13 @@
     --border: hsl(209 19% 29%);
     --border-muted: hsl(209 28% 18%);
     --primary: hsl(209 76% 71%);
-    --primary-hovered: hsla(209, 76%, 71%, 0.7);
+    --primary-hovered: hsla(209, 76%, 71%, 1);
     --secondary: hsl(31 62% 64%);
     --danger: hsl(9 50% 64%);
-    --danger-hovered: hsla(9, 50%, 64%, 0.7);
+    --danger-hovered: hsla(9, 50%, 64%, 1);
     --warning: hsl(52 50% 57%);
     --success: hsl(146 50% 59%);
+    --success-hovered: hsla(146, 50%, 59%, 1);
     --info: hsl(217 50% 65%);
     --header-size: 55px;
     --button-hover: hsla(0, 0%, 90%, .2)

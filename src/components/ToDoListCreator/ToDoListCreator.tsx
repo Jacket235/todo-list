@@ -1,12 +1,12 @@
-import { PopupContent } from './PopupContent';
-import { PopupHeader } from './PopupHeader'
+import { ToDoListCreatorContent } from './ToDoListCreatorContent';
+import { TodoListCreatorHeader } from './TodoListCreatorHeader'
 import './toDoListCreator.css'
 
 export function ToDoListCreator() {
     return (
         <div className="todo-list-creator">
-            <PopupHeader />
-            <PopupContent />
+            <TodoListCreatorHeader />
+            <ToDoListCreatorContent />
         </div>
     );
 }

@@ -4,6 +4,7 @@
     align-items: center;
     position: relative;
     padding: 8px;
+    font-size: 20px;
     background: var(--bg);
 }
 
