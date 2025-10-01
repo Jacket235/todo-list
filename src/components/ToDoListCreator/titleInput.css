@@ -1,0 +1,23 @@
+.title-input {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-input span {
+    color: var(--text-muted);
+    font-size: 20px;
+}
+
+.title-input input {
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--bg);
+    outline: none;
+    font-size: 28px;
+    border: 1px solid var(--border);
+}
+
+.title-input input:focus {
+    border: 1px solid var(--primary);
+}
