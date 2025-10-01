@@ -1,6 +1,7 @@
 import './toDoItem.css'
+import { TodoItemData } from '../../Types';
 
-export function ToDoItem({ task, status } : { task: string; status: string}) {
+export function ToDoItem({ task, status } : TodoItemData) {
     return (
         <div className='todo-item'>
             <div className={`todo-item-checkmark ${status}`}></div>

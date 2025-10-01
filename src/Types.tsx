@@ -7,10 +7,15 @@ export type CreateButtonProps = {
     text: string;
 }
 
-export type OverlayProps = {
-    onClose: () => void;
-    children: React.ReactNode;
+export type OverlayContextType = {
+    openOverlay: (child: React.ReactNode) => void;
+    closeOverlay: () => void;
 };
+
+export type OverlayProps = {
+    children: React.ReactNode;
+    onClose: () => void;
+}
 
 export type TodoListType = {
     id: string;
@@ -29,4 +34,9 @@ export type TodoListData = {
         inprogress: Task[], 
         incomplete: Task[] 
     };
+}
+
+export type TodoItemData = {
+    task: string;
+    status: string;
 }

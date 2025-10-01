@@ -5,20 +5,22 @@ import { useState, useEffect } from 'react';
 import { TodoListType } from './Types';
 
 import { Overlay } from './components/ui/Overlay/Overlay';
-import { ToDoListEdit } from './components/ToDoListEdit/ToDoListEdit';
+import OverlayContext from './Context/OverlayContext';
 
 function App() {
     const [todos, setTodos] = useState<TodoListType[]>([]);
 
-    const [overlayVisible, setOverlayVisible] = useState<boolean>(true);
+    const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
     const [overlayChild, setOverlayChild] = useState<React.ReactNode>(null);
 
-    const handleOverlayVisibility = () => {
-        setOverlayVisible(prev => !prev);
+    const handleOverlayOpen = (child: React.ReactNode) => {
+        setOverlayVisible(true);
+        setOverlayChild(child);
     }
 
-    const handleOverlayChild = () => {
-        setOverlayChild(<ToDoListEdit />);
+    const handleOverlayClose = () => {
+        setOverlayVisible(false);
+        setOverlayChild(null);
     }
 
     const todos1 = [{
@@ -42,13 +44,15 @@ function App() {
 
     return (
         <div className="App">
-            {overlayVisible && (
-                <Overlay onClose={handleOverlayVisibility}>
-                    {overlayChild}
-                </Overlay>
-            )}
-            <Header />
-            <Main todos={todos1} />
+            <OverlayContext.Provider value={{openOverlay: handleOverlayOpen, closeOverlay: handleOverlayClose}}>
+                {overlayVisible && (
+                    <Overlay onClose={handleOverlayClose}>
+                        {overlayChild}
+                    </Overlay>
+                )}
+                <Header />
+                <Main todos={todos1} />
+            </OverlayContext.Provider>
         </div>
     );
 }
