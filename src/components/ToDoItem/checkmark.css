@@ -1,0 +1,16 @@
+.todo-item-checkmark {
+    flex-shrink: 0;
+    width: 10px;
+}
+
+.todo-item-checkmark.complete {
+    background: var(--success);
+}
+
+.todo-item-checkmark.inprogress {
+    background: var(--info)
+}
+
+.todo-item-checkmark.incomplete {
+    background: var(--warning);
+}

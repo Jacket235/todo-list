@@ -40,3 +40,11 @@ export type TodoItemData = {
     task: string;
     status: string;
 }
+
+export type CheckmarkType = {
+    status: string;
+}
+
+export type TodoItemMainType = {
+    task: string;
+}
