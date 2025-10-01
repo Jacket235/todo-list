@@ -1,5 +1,4 @@
 import './toDoList.css';
-import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { TodoListData } from '../../Types';
 import { ToDoListEdit } from '../ToDoListEdit/ToDoListEdit';
 import OverlayContext from '../../Context/OverlayContext';
