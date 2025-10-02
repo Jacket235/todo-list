@@ -12,10 +12,8 @@
 .overlay-content {
     display: flex;
     justify-content: center;
-    align-items: center;
     max-width: 80%;
     max-height: 80%;
     pointer-events: auto;
     z-index: 420;
-    overflow-y: auto;
 }

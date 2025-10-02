@@ -1,5 +1,12 @@
 .todo-list-creator {
+    display: flex;
+    flex-direction: column;
     background: var(--bg-dark);
     width: 380px;
-    height: auto;
+    max-height: 80vh;
+}
+
+.creator-scrollable {
+    flex: 1;
+    overflow-y: auto;
 }

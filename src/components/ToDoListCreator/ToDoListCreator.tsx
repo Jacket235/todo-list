@@ -6,7 +6,9 @@ export function ToDoListCreator() {
     return (
         <div className="todo-list-creator">
             <TodoListCreatorHeader />
-            <ToDoListCreatorContent />
+            <div className='creator-scrollable'>
+                <ToDoListCreatorContent />
+            </div>
         </div>
     );
 }
