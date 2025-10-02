@@ -3,36 +3,47 @@ import { Header } from './layout/Header';
 import { Main } from './layout/Main';
 import { useState, useEffect } from 'react';
 import { TodoListType } from './Types';
+import OverlayContext from './Context/OverlayContext';
+import { Overlay } from './components/ui/Overlay/Overlay';
+import { ToDoListCreator } from './components/ToDoListCreator/ToDoListCreator';
+import { ToDoListEdit } from './components/ToDoListEdit/ToDoListEdit';
 
 function App() {
     const [todos, setTodos] = useState<TodoListType[]>([]);
 
+    const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
+    const [overlayChild, setOverlayChild] = useState<React.ReactNode| null>(null);
+
+    const handleCloseOverlay = () => {
+        setOverlayVisible(false);
+        setOverlayChild(null);
+    }
+
+    const handleOpenCreator = () => {
+        setOverlayVisible(true);
+        setOverlayChild(<ToDoListCreator />);
+    }
+
+    const handleOpenEditor = () => {
+        setOverlayVisible(true);
+        setOverlayChild(<ToDoListEdit />);
+    }
+
     useEffect(() => {
-        setTodos([{
-            id: crypto.randomUUID(),
-            title: "Personal Tasks",
-            tasks: {
-                complete: [
-                    { id: crypto.randomUUID(), text: "Buy groceries: milk, bread, eggs, and coffee"},
-                    { id: crypto.randomUUID(), text: "Morning jog – 5km around the park"}
-                ],
-                inprogress: [
-                    { id: crypto.randomUUID(), text: "Finish React project and push to GitHub"}
-                    
-                ],
-                incomplete: [
-                    { id: crypto.randomUUID(), text: "Read 20 pages of 'Clean Code'"},
-                    { id: crypto.randomUUID(), text: "Call mom in the evening"}
-                ]
-            }}]
-        );
+        const savedTodos = localStorage.getItem("todos");
+        setTodos(savedTodos ? JSON.parse(savedTodos) : []);
     }, [])
 
     return (
-        <div className="App">
-            <Header />
-            <Main todos={todos} />
-        </div>
+        <OverlayContext.Provider value={{closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
+            <div className="App">
+                {overlayVisible && (
+                    <Overlay child={overlayChild} onClose={handleCloseOverlay} />
+                )}
+                <Header />
+                <Main todos={todos} />
+            </div>
+        </OverlayContext.Provider>
     );
 }
 

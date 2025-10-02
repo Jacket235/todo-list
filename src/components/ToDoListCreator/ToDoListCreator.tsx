@@ -11,13 +11,13 @@ export function ToDoListCreator() {
     const [tasks, setTasks] = useState<Task[]>([]);
 
     return (
-        <div className="todo-list-creator">
-            <TodoListCreatorHeader />
-            <div className='creator-scrollable'>
-                <NewToDoListContext.Provider value={{id: id, title: title, setTitle: setTitle, tasks: tasks, setTasks: setTasks}}>
-                    <ToDoListCreatorContent />
-                </NewToDoListContext.Provider>
+            <div className="todo-list-creator">
+                <TodoListCreatorHeader />
+                <div className='creator-scrollable'>
+                    <NewToDoListContext.Provider value={{id: id, title: title, setTitle: setTitle, tasks: tasks, setTasks: setTasks}}>
+                        <ToDoListCreatorContent />
+                    </NewToDoListContext.Provider>
+                </div>
             </div>
-        </div>
     );
 }

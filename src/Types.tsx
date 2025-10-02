@@ -3,6 +3,17 @@ export type Task = {
     text: string;
 }
 
+export type OverlayProps = {
+    onClose: () => void;
+    child: React.ReactNode;
+}
+
+export type OverlayContextType = {
+    closeOverlay: () => void;
+    openCreator: () => void;
+    openEditor: () => void;
+}
+
 export type CreateButtonProps = {
     text: string;
 }
