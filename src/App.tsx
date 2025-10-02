@@ -1,33 +1,14 @@
 import './App.css';
 import { Header } from './layout/Header';
 import { Main } from './layout/Main';
-import { useState, useEffect } from 'react';
-import { TodoListType } from './Types';
+import { useEffect, useContext } from 'react';
 import OverlayContext from './Context/OverlayContext';
 import { Overlay } from './components/ui/Overlay/Overlay';
-import { ToDoListCreator } from './components/ToDoListCreator/ToDoListCreator';
-import { ToDoListEdit } from './components/ToDoListEdit/ToDoListEdit';
+import TodosContext from './Context/TodosContext';
 
 function App() {
-    const [todos, setTodos] = useState<TodoListType[]>([]);
-
-    const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
-    const [overlayChild, setOverlayChild] = useState<React.ReactNode| null>(null);
-
-    const handleCloseOverlay = () => {
-        setOverlayVisible(false);
-        setOverlayChild(null);
-    }
-
-    const handleOpenCreator = () => {
-        setOverlayVisible(true);
-        setOverlayChild(<ToDoListCreator />);
-    }
-
-    const handleOpenEditor = () => {
-        setOverlayVisible(true);
-        setOverlayChild(<ToDoListEdit />);
-    }
+    const { overlayVisible, overlayChild, closeOverlay } = useContext(OverlayContext)!;
+    const { todos, setTodos } = useContext(TodosContext)!;
 
     useEffect(() => {
         const savedTodos = localStorage.getItem("todos");
@@ -35,15 +16,13 @@ function App() {
     }, [])
 
     return (
-        <OverlayContext.Provider value={{closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
-            <div className="App">
-                {overlayVisible && (
-                    <Overlay child={overlayChild} onClose={handleCloseOverlay} />
-                )}
-                <Header />
-                <Main todos={todos} />
-            </div>
-        </OverlayContext.Provider>
+        <div className="App">
+            {overlayVisible && (
+                <Overlay child={overlayChild} onClose={closeOverlay} />
+            )}
+            <Header />
+            <Main todos={todos} />
+        </div>
     );
 }
 

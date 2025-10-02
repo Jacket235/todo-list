@@ -1,12 +1,14 @@
 import NewToDoListContext from '../../Context/NewToDoListContext';
 import OverlayContext from '../../Context/OverlayContext';
+import TodosContext from '../../Context/TodosContext';
 import { TodoListType } from '../../Types';
 import './toDoListAction.css';
 import { useContext } from 'react';
 
 export function ToDoListAction() {
     const toDoList = useContext(NewToDoListContext);
-    const overlay = useContext(OverlayContext);
+    const { closeOverlay } = useContext(OverlayContext)!;
+    const { addTodo } = useContext(TodosContext)!;
 
     const handleCreateList = () => {
         if(!toDoList) return;
@@ -25,13 +27,22 @@ export function ToDoListAction() {
 
         const updateTodos = [...existingTodos, newTodoList];
 
-        localStorage.setItem("todos", JSON.stringify(updateTodos));
-        overlay?.closeOverlay();
+        addTodo(newTodoList);
+
+        handleClose();
+    }
+
+    const handleClose = () => {
+        if(!toDoList) return;
+
+        toDoList.setTasks([]);
+        toDoList.setTitle("");
+        closeOverlay();
     }
     
     return (
         <div className="list-action">
-            <button>Cancel</button>
+            <button onClick={handleClose}>Cancel</button>
             <button onClick={handleCreateList}>Create</button>
         </div>
     )

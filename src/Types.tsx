@@ -9,6 +9,8 @@ export type OverlayProps = {
 }
 
 export type OverlayContextType = {
+    overlayVisible: boolean;
+    overlayChild: React.ReactNode;
     closeOverlay: () => void;
     openCreator: () => void;
     openEditor: () => void;
@@ -24,6 +26,12 @@ export type NewToDoListContextType = {
     setTitle: (value: string) => void;
     tasks: Task[];
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
+export type TodosContextType = {
+    todos: TodoListType[];
+    setTodos:React.Dispatch<React.SetStateAction<TodoListType[]>>;
+    addTodo: (todo: TodoListType) => void;
 }
 
 export type TodoListType = {
