@@ -1,11 +1,10 @@
 import './overlay.css'
-import { OverlayProps } from '../../../Types';
 
-export function Overlay({ onClose, children }: OverlayProps) {
+export function Overlay() {
     return (
-        <div className="overlay" onClick={onClose}>
+        <div className="overlay">
             <div className='overlay-content' onClick={e => e.stopPropagation()}>
-                {children}
+                
             </div>
         </div>
     )

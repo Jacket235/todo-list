@@ -1,7 +1,3 @@
-import { ReactElement } from "react";
-import { ToDoListCreator } from "./components/ToDoListCreator/ToDoListCreator";
-import { ToDoListEdit } from "./components/ToDoListEdit/ToDoListEdit";
-
 export type Task = {
     id: string;
     text: string;
@@ -11,15 +7,12 @@ export type CreateButtonProps = {
     text: string;
 }
 
-type OverlayChildType = ReactElement<typeof ToDoListCreator> | ReactElement<typeof ToDoListEdit> | null;
-export type OverlayContextType = {
-    openOverlay: (child: OverlayChildType) => void;
-    closeOverlay: () => void;
-};
-
-export type OverlayProps = {
-    children: React.ReactNode;
-    onClose: () => void;
+export type NewToDoListContextType = {
+    id: string;
+    title: string;
+    setTitle: (value: string) => void;
+    tasks: Task[];
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
 
 export type TodoListType = {
@@ -56,7 +49,6 @@ export type TodoItemMainType = {
 
 export type ToDoListTitleType = {
     title: string;
-    handleEditList: () => void;
 }
 
 export type ToDoContentType = {

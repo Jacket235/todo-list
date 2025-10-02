@@ -4,24 +4,8 @@ import { Main } from './layout/Main';
 import { useState, useEffect } from 'react';
 import { TodoListType } from './Types';
 
-import { Overlay } from './components/ui/Overlay/Overlay';
-import OverlayContext from './Context/OverlayContext';
-
 function App() {
     const [todos, setTodos] = useState<TodoListType[]>([]);
-
-    const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
-    const [overlayChild, setOverlayChild] = useState<React.ReactNode>(null);
-
-    const handleOverlayOpen = (child: React.ReactNode) => {
-        setOverlayVisible(true);
-        setOverlayChild(child);
-    }
-
-    const handleOverlayClose = () => {
-        setOverlayVisible(false);
-        setOverlayChild(null);
-    }
 
     const todos1 = [{
         id: crypto.randomUUID(),
@@ -44,15 +28,8 @@ function App() {
 
     return (
         <div className="App">
-            <OverlayContext.Provider value={{openOverlay: handleOverlayOpen, closeOverlay: handleOverlayClose}}>
-                {overlayVisible && (
-                    <Overlay onClose={handleOverlayClose}>
-                        {overlayChild}
-                    </Overlay>
-                )}
-                <Header />
-                <Main todos={todos1} />
-            </OverlayContext.Provider>
+            <Header />
+            <Main todos={todos1} />
         </div>
     );
 }
