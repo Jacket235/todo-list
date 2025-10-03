@@ -1,14 +1,29 @@
-import { ToDoContentType } from '../../Types';
-import { TaskSection } from './TaskSection';
+import { ToDoItem } from "../ToDoItem/ToDoItem";
+import { useContext } from "react";
+import TodoListContext from "../../Context/TodoListContext";
 import './toDoContent.css';
 
-export function ToDoContent({ tasks }: ToDoContentType) {
+export function ToDoContent() {
+    const { tasks } = useContext(TodoListContext)!; 
+
+    const order = [
+        "incomplete",
+        "inprogress",
+        "complete"
+    ]
+
     return (
         <div className="todo-content">
             <ul>
-                <TaskSection tasks={tasks.complete} status="complete" />
-                <TaskSection tasks={tasks.inprogress} status="inprogress" />
-                <TaskSection tasks={tasks.incomplete} status="incomplete" />
+                {order.map(status => 
+                    tasks
+                        .filter(task => task.status === status)
+                        .map(task => (
+                            <li key={task.id}>
+                                <ToDoItem idTask={task.id} task={task.text} status={task.status} />
+                            </li>
+                        ))
+                )}
             </ul>
         </div>
     );

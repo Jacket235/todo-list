@@ -1,6 +1,7 @@
 export type Task = {
     id: string;
     text: string;
+    status: string;
 }
 
 export type OverlayProps = {
@@ -30,55 +31,29 @@ export type NewToDoListContextType = {
 
 export type TodosContextType = {
     todos: TodoListType[];
-    setTodos:React.Dispatch<React.SetStateAction<TodoListType[]>>;
+    setTodos: React.Dispatch<React.SetStateAction<TodoListType[]>>;
     addTodo: (todo: TodoListType) => void;
+    toggleTask: (todoId: string, taskId: string) => void;
 }
 
 export type TodoListType = {
     id: string;
     title: string;
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
+    tasks: Task[];
 }
 
 export type TodoListData = {
+    id: string;
     title: string;
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
+    tasks: Task[];
 }
 
 export type TodoItemData = {
+    idTask: string;
     task: string;
     status: string;
 }
 
 export type CheckmarkType = {
-    status: string;
-}
-
-export type TodoItemMainType = {
-    task: string;
-}
-
-export type ToDoListTitleType = {
-    title: string;
-}
-
-export type ToDoContentType = {
-    tasks: { 
-        complete: Task[], 
-        inprogress: Task[], 
-        incomplete: Task[] 
-    };
-}
-
-export type TaskSectionType = {
-    tasks: Task[];
     status: string;
 }

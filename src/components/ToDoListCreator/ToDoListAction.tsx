@@ -18,11 +18,7 @@ export function ToDoListAction() {
         const newTodoList: TodoListType = {
             id: toDoList.id,
             title: toDoList.title,
-            tasks: {
-                complete: [],
-                inprogress: [],
-                incomplete: toDoList.tasks
-            }
+            tasks: toDoList.tasks
         }
 
         const updateTodos = [...existingTodos, newTodoList];

@@ -25,22 +25,45 @@ export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
     const [overlayChild, setOverlayChild] = useState<React.ReactNode| null>(null);
 
     const handleCloseOverlay = () => {
-            setOverlayVisible(false);
-            setOverlayChild(null);
-        }
-    
-        const handleOpenCreator = () => {
-            setOverlayVisible(true);
-            setOverlayChild(<ToDoListCreator />);
-        }
-    
-        const handleOpenEditor = () => {
-            setOverlayVisible(true);
-            setOverlayChild(<ToDoListEdit />);
-        }
+        setOverlayVisible(false);
+        setOverlayChild(null);
+    }
+
+    const handleOpenCreator = () => {
+        setOverlayVisible(true);
+        setOverlayChild(<ToDoListCreator />);
+    }
+
+    const handleOpenEditor = () => {
+        setOverlayVisible(true);
+        setOverlayChild(<ToDoListEdit />);
+    }
+
+    const handleToggleTask = (listId: string, taskId: string) => {
+        const statuses = ["incomplete", "inprogress", "complete"];
+
+        setTodos(prevTodos => {
+            const updatedTodos = prevTodos.map(list => {
+                if (list.id !== listId) return list;
+
+                const updatedTasks = list.tasks.map(task => {
+                    if (task.id !== taskId) return task;
+
+                    const nextStatus = statuses[(statuses.indexOf(task.status) + 1) % statuses.length];
+                    return { ...task, status: nextStatus };
+                });
+
+                return { ...list, tasks: updatedTasks };
+            });
+
+            localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+            return updatedTodos;
+        });
+    }
 
     return (
-        <TodosContext.Provider value={{todos: todos, setTodos: setTodos, addTodo: addTodo}}>
+        <TodosContext.Provider value={{todos: todos, setTodos: setTodos, addTodo: addTodo, toggleTask: handleToggleTask}}>
             <NewToDoListContext.Provider value={{id: id, title: title, setTitle: setTitle, tasks: tasks, setTasks: setTasks}}>
                 <OverlayContext.Provider value={{overlayVisible: overlayVisible, overlayChild: overlayChild, closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
                     {children}

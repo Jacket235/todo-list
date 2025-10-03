@@ -7,7 +7,7 @@ export function ToDoListTasks() {
 
     const handleCreateTask = () => {
         setTasks(prev => {
-            return [...prev, {id: crypto.randomUUID(), text: ""}]
+            return [...prev, {id: crypto.randomUUID(), text: "", status: "incomplete"}]
         })
     }
 

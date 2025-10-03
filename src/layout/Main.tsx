@@ -1,13 +1,19 @@
 import { ToDoList } from "../components/ToDoList/ToDoList";
+import TodosContext from "../Context/TodosContext";
+import { useContext } from "react";
 import './main.css';
-import { TodoListType } from "../Types";
+import TodoListContext from "../Context/TodoListContext";
 
-export function Main({ todos }: { todos: TodoListType[] }) {
+export function Main() {
+    const { todos } = useContext(TodosContext)!;
+
     return (
         <main>
             <div className="main-content">
                 {todos.map(todo => (
-                    <ToDoList key={todo.id} title={todo.title} tasks={todo.tasks} />
+                    <TodoListContext.Provider key={todo.id} value={{id: todo.id, title: todo.title, tasks: todo.tasks}}>
+                        <ToDoList />
+                    </TodoListContext.Provider>
                 ))}
             </div>
         </main>

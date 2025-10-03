@@ -21,7 +21,7 @@ function App() {
                 <Overlay child={overlayChild} onClose={closeOverlay} />
             )}
             <Header />
-            <Main todos={todos} />
+            <Main />
         </div>
     );
 }
