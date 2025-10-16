@@ -14,14 +14,16 @@ export function ToDoListTasks() {
         setTasks(prev => 
             prev.map(task => ( 
                 task.id === id ? { ...task, text: newText} : task 
-            )))
+            ))
+        )
     }
 
     const handleDelete = (id: string) => {
         setTasks(prev => 
             prev.filter(task => (
                 task.id !== id
-            )));
+            ))
+        );
     }
 
     return(

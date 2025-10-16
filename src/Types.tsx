@@ -26,13 +26,19 @@ export type ToDoListCreatorContextType = {
     title: string;
     setTitle: (value: string) => void;
     tasks: Task[];
+    addTodo: (todo: TodoListType) => void;
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
+export type ToDoListEditorContextType = {
+    /**
+    * 
+    */
 }
 
 export type TodosContextType = {
     todos: TodoListType[];
     setTodos: React.Dispatch<React.SetStateAction<TodoListType[]>>;
-    addTodo: (todo: TodoListType) => void;
     toggleTask: (todoId: string, taskId: string) => void;
 }
 

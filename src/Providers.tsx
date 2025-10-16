@@ -8,14 +8,6 @@ import OverlayContext from "./context/OverlayContext";
 export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
     const [todos, setTodos] = useState<TodoListType[]>([]);
 
-    const addTodo = (todo: TodoListType) => {
-        setTodos(prev => {
-            const updated = [...prev, todo];
-            localStorage.setItem("todos", JSON.stringify(updated));
-            return updated;
-        });
-    }
-
     const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
     const [overlayChild, setOverlayChild] = useState<React.ReactNode| null>(null);
 
@@ -58,7 +50,7 @@ export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
     }
 
     return (
-        <TodosContext.Provider value={{todos: todos, setTodos: setTodos, addTodo: addTodo, toggleTask: handleToggleTask}}>
+        <TodosContext.Provider value={{todos: todos, setTodos: setTodos, toggleTask: handleToggleTask}}>
             <OverlayContext.Provider value={{overlayVisible: overlayVisible, overlayChild: overlayChild, closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
                 {children}
             </OverlayContext.Provider>
