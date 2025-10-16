@@ -1,9 +1,9 @@
-import NewToDoListContext from '../../Context/NewToDoListContext';
+import ToDoListCreatorContext from '../../Context/ToDoListCreatorContext';
 import './toDoListTasks.css';
 import { useContext } from 'react';
 
 export function ToDoListTasks() {
-    const { tasks, setTasks } = useContext(NewToDoListContext)!;
+    const { tasks, setTasks } = useContext(ToDoListCreatorContext)!;
 
     const handleCreateTask = () => {
         setTasks(prev => {
@@ -12,11 +12,17 @@ export function ToDoListTasks() {
     }
 
     const handleChange = (id: string, newText: string) => {
-        setTasks(prev => prev.map(task => ( task.id === id ? { ...task, text: newText} : task )))
+        setTasks(prev => 
+            prev.map(task => ( 
+                task.id === id ? { ...task, text: newText} : task 
+            )))
     }
 
     const handleDelete = (id: string) => {
-        setTasks(prev => prev.filter(task => (task.id !== id)));
+        setTasks(prev => 
+            prev.filter(task => (
+                task.id !== id
+            )));
     }
 
     return(

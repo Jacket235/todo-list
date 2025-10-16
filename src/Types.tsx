@@ -21,7 +21,7 @@ export type CreateButtonProps = {
     text: string;
 }
 
-export type NewToDoListContextType = {
+export type ToDoListCreatorContextType = {
     id: string;
     title: string;
     setTitle: (value: string) => void;

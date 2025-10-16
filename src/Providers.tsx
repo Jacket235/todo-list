@@ -1,10 +1,9 @@
 import { ReactNode, useState } from "react";
-import NewToDoListContext from "./Context/NewToDoListContext";
-import OverlayContext from "./Context/OverlayContext";
-import { Task, TodoListType } from "./Types";
+import { TodoListType } from "./Types";
 import { ToDoListCreator } from "./components/ToDoListCreator/ToDoListCreator";
 import { ToDoListEdit } from "./components/ToDoListEdit/ToDoListEdit";
 import TodosContext from "./Context/TodosContext";
+import OverlayContext from "./Context/OverlayContext";
 
 export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
     const [todos, setTodos] = useState<TodoListType[]>([]);
@@ -16,10 +15,6 @@ export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
             return updated;
         });
     }
-
-    const id = crypto.randomUUID();
-    const [title, setTitle] = useState<string>("");
-    const [tasks, setTasks] = useState<Task[]>([]);
 
     const [overlayVisible, setOverlayVisible] = useState<boolean>(false);
     const [overlayChild, setOverlayChild] = useState<React.ReactNode| null>(null);
@@ -64,11 +59,9 @@ export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
 
     return (
         <TodosContext.Provider value={{todos: todos, setTodos: setTodos, addTodo: addTodo, toggleTask: handleToggleTask}}>
-            <NewToDoListContext.Provider value={{id: id, title: title, setTitle: setTitle, tasks: tasks, setTasks: setTasks}}>
-                <OverlayContext.Provider value={{overlayVisible: overlayVisible, overlayChild: overlayChild, closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
-                    {children}
-                </OverlayContext.Provider>
-            </NewToDoListContext.Provider>
+            <OverlayContext.Provider value={{overlayVisible: overlayVisible, overlayChild: overlayChild, closeOverlay: handleCloseOverlay, openCreator: handleOpenCreator, openEditor: handleOpenEditor}}>
+                {children}
+            </OverlayContext.Provider>
         </TodosContext.Provider>
     );
 };
