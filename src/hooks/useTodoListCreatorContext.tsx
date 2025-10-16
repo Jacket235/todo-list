@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import TodoListCreatorContext from "../Context/TodoListCreatorContext";
+import TodoListCreatorContext from "../context/TodoListCreatorContext";
 import { ToDoListCreatorContextType } from "../Types";
 
 export function useTodoListCreatorContext(): ToDoListCreatorContextType {

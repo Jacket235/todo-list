@@ -2,8 +2,8 @@ import { ReactNode, useState } from "react";
 import { TodoListType } from "./Types";
 import { ToDoListCreator } from "./components/ToDoListCreator/ToDoListCreator";
 import { ToDoListEdit } from "./components/ToDoListEdit/ToDoListEdit";
-import TodosContext from "./Context/TodosContext";
-import OverlayContext from "./Context/OverlayContext";
+import TodosContext from "./context/TodosContext";
+import OverlayContext from "./context/OverlayContext";
 
 export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
     const [todos, setTodos] = useState<TodoListType[]>([]);

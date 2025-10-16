@@ -1,7 +1,7 @@
 import './toDoListCreator.css'
 import { ToDoListCreatorContent } from './ToDoListCreatorContent';
 import { TodoListCreatorHeader } from './TodoListCreatorHeader'
-import ToDoListCreatorContext from '../../Context/TodoListCreatorContext';
+import ToDoListCreatorContext from '../../context/TodoListCreatorContext';
 import { useState } from 'react';
 import { Task } from '../../Types';
 

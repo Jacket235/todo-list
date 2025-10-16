@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import OverlayContext from "../Context/OverlayContext";
+import OverlayContext from "../context/OverlayContext";
 import { OverlayContextType } from "../Types";
 
 export function useOverlayContext(): OverlayContextType {

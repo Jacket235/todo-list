@@ -1,6 +1,6 @@
 import { ToDoList } from "../components/ToDoList/ToDoList";
 import './main.css';
-import TodoListContext from "../Context/TodoListContext";
+import TodoListContext from "../context/TodoListContext";
 import { useTodosContext } from "../hooks/useTodosContext";
 
 export function Main() {

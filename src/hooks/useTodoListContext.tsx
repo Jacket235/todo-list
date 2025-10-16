@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import TodoListContext from "../Context/TodoListContext";
+import TodoListContext from "../context/TodoListContext";
 import { TodoListData } from "../Types";
 
 export function useTodoListContext(): TodoListData {
