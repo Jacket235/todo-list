@@ -1,11 +1,10 @@
 import { ToDoList } from "../components/ToDoList/ToDoList";
-import TodosContext from "../Context/TodosContext";
-import { useContext } from "react";
 import './main.css';
 import TodoListContext from "../Context/TodoListContext";
+import { useTodosContext } from "../hooks/useTodosContext";
 
 export function Main() {
-    const { todos } = useContext(TodosContext)!;
+    const { todos } = useTodosContext();
 
     return (
         <main>

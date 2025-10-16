@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import OverlayContext from "../../Context/OverlayContext";
-import TodoListContext from "../../Context/TodoListContext";
 import "./toDoListTitle.css";
+import { useOverlayContext } from "../../hooks/useOverlayContext";
+import { useTodoListContext } from "../../hooks/useTodoListContext";
 
 
 export function ToDoListTitle() {
-    const { openEditor } = useContext(OverlayContext)!; 
-    const { title } = useContext(TodoListContext)!; 
+    const { openEditor } = useOverlayContext();
+    const { title } = useTodoListContext();
 
     return (
         <div className="todo-title">

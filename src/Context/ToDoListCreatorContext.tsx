@@ -1,6 +1,6 @@
 import React from "react";
 import { ToDoListCreatorContextType } from "../Types";
 
-const ToDoListCreatorContext = React.createContext<ToDoListCreatorContextType | null>(null);
+const TodoListCreatorContext = React.createContext<ToDoListCreatorContextType | null>(null);
 
-export default ToDoListCreatorContext;
+export default TodoListCreatorContext;

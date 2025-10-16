@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import ToDoListCreatorContext from '../../Context/ToDoListCreatorContext';
 import './titleInput.css';
+import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
 
 export function TitleInput() {
-    const { title, setTitle } = useContext(ToDoListCreatorContext)!;
+    const { title, setTitle } = useTodoListCreatorContext();
 
     return(
          <div className='title-input'>

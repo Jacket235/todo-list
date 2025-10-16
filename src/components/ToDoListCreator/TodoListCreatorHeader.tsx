@@ -1,9 +1,8 @@
 import './todoListCreatorHeader.css';
-import { useContext } from 'react';
-import OverlayContext from '../../Context/OverlayContext';
+import { useOverlayContext } from '../../hooks/useOverlayContext';
 
 export function TodoListCreatorHeader() {
-    const { closeOverlay } = useContext(OverlayContext)!;
+    const { closeOverlay } = useOverlayContext();
 
     return(
         <div className='popup-header'>

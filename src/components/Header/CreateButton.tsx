@@ -1,10 +1,9 @@
 import './createButton.css';
-import { useContext } from 'react';
 import { CreateButtonProps } from '../../Types';
-import OverlayContext from '../../Context/OverlayContext';
+import { useOverlayContext } from '../../hooks/useOverlayContext';
 
 export function CreateButton({ text }: CreateButtonProps) {
-    const { openCreator } = useContext(OverlayContext)!; 
+    const { openCreator } = useOverlayContext();
 
     return (
         <button className='button' onClick={openCreator}>

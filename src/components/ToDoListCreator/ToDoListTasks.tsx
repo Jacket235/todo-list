@@ -1,9 +1,8 @@
-import ToDoListCreatorContext from '../../Context/ToDoListCreatorContext';
 import './toDoListTasks.css';
-import { useContext } from 'react';
+import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
 
 export function ToDoListTasks() {
-    const { tasks, setTasks } = useContext(ToDoListCreatorContext)!;
+    const { tasks, setTasks } = useTodoListCreatorContext();
 
     const handleCreateTask = () => {
         setTasks(prev => {

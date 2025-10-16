@@ -1,10 +1,9 @@
-import { ToDoItem } from "../ToDoItem/ToDoItem";
-import { useContext } from "react";
-import TodoListContext from "../../Context/TodoListContext";
 import './toDoContent.css';
+import { ToDoItem } from "../ToDoItem/ToDoItem";
+import { useTodoListContext } from "../../hooks/useTodoListContext";
 
 export function ToDoContent() {
-    const { tasks } = useContext(TodoListContext)!; 
+    const { tasks } = useTodoListContext();
 
     const order = [
         "incomplete",

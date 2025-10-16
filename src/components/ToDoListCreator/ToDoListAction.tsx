@@ -1,14 +1,13 @@
-import ToDoListCreatorContext from '../../Context/ToDoListCreatorContext';
-import OverlayContext from '../../Context/OverlayContext';
-import TodosContext from '../../Context/TodosContext';
-import { TodoListType } from '../../Types';
 import './toDoListAction.css';
-import { useContext } from 'react';
+import { useOverlayContext } from '../../hooks/useOverlayContext';
+import { useTodosContext } from '../../hooks/useTodosContext';
+import { TodoListType } from '../../Types';
+import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
 
 export function ToDoListAction() {
-    const toDoList = useContext(ToDoListCreatorContext);
-    const { closeOverlay } = useContext(OverlayContext)!;
-    const { addTodo } = useContext(TodosContext)!;
+    const toDoList = useTodoListCreatorContext();
+    const { closeOverlay } = useOverlayContext();
+    const { addTodo } = useTodosContext();
 
     const handleCreateList = () => {
         if(!toDoList) return;

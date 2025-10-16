@@ -1,14 +1,14 @@
 import './App.css';
 import { Header } from './layout/Header';
 import { Main } from './layout/Main';
-import { useEffect, useContext } from 'react';
-import OverlayContext from './Context/OverlayContext';
+import { useEffect } from 'react';
 import { Overlay } from './components/ui/Overlay/Overlay';
-import TodosContext from './Context/TodosContext';
+import { useOverlayContext } from './hooks/useOverlayContext';
+import { useTodosContext } from './hooks/useTodosContext';
 
 function App() {
-    const { overlayVisible, overlayChild, closeOverlay } = useContext(OverlayContext)!;
-    const { todos, setTodos } = useContext(TodosContext)!;
+    const { overlayVisible, overlayChild, closeOverlay } = useOverlayContext();
+    const { todos, setTodos } = useTodosContext();
 
     useEffect(() => {
         const savedTodos = localStorage.getItem("todos");
