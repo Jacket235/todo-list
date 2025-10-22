@@ -17,6 +17,13 @@ export type OverlayContextType = {
     openEditor: () => void;
 }
 
+export type ToDoListHeaderType = {
+    title: string;
+    icon: string;
+    iconAlt: string;
+    onButtonClick: () => void;
+}
+
 export type ToDoListCreatorContextType = {
     id: string;
     title: string;
