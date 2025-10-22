@@ -25,7 +25,7 @@ export function ToDoListCreator() {
         <ToDoListCreatorContext.Provider value={{id: id, title: title, setTitle: setTitle, addTodo: addTodo, tasks: tasks, setTasks: setTasks}}>
             <div className="todo-list-creator">
                 <TodoListCreatorHeader />
-                <div className='creator-scrollable'>
+                <div className='scrollable'>
                     <ToDoListCreatorContent />
                 </div>
             </div>
