@@ -17,10 +17,6 @@ export type OverlayContextType = {
     openEditor: () => void;
 }
 
-export type CreateButtonProps = {
-    text: string;
-}
-
 export type ToDoListCreatorContextType = {
     id: string;
     title: string;
