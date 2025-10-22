@@ -3,7 +3,6 @@
     flex-direction: column;
     background: var(--bg-dark);
     width: 380px;
-    max-height: 80vh;
 }
 
 .creator-scrollable {
