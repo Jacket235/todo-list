@@ -5,7 +5,7 @@ export function ToDoListEdit() {
     return (
         <TodoListEditorContext.Provider value={{}}>
             <div className="todo-list-edit">
-                Create todo lists.
+                Modify your list.
             </div>
         </TodoListEditorContext.Provider>
     );
