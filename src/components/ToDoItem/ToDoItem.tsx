@@ -11,12 +11,8 @@ export function ToDoItem({ idTask, task, status } : TodoItemData) {
     return (
         <div className='todo-item' onClick={() => toggleTask(id, idTask)}>
             <Checkmark status={status} />
-            <div className='todo-item-main'>
-                { task }
-                <div className='todo-item-action'>
-                    <button>Delete</button>
-                    <button>Edit</button>
-                </div>
+            <div className='todo-item-task'>
+                <span className='task-text'>{ task }</span>
             </div>
         </div>
     );
