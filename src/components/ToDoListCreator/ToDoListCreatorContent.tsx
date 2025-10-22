@@ -1,7 +1,7 @@
-import { TitleInput } from './TitleInput'
+import './toDoListCreatorContent.css';
+import { TitleInput } from './TitleInput';
 import { ToDoListAction } from './ToDoListAction';
-import './toDoListCreatorContent.css'
-import { ToDoListTasks } from './ToDoListTasks'
+import { ToDoListTasks } from './ToDoListTasks';
 
 export function ToDoListCreatorContent() {
     return(

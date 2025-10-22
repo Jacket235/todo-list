@@ -9,13 +9,19 @@
     font-size: 20px;
 }
 
+.container-tasks {
+    min-height: 220px;
+    height: 220px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+}
+
 .list-tasks ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     list-style: none;
+    gap: 8px;
     padding: 10px 4px;
-    border: 1px solid var(--border);
 }
 
 .list-tasks li {
@@ -27,6 +33,7 @@
 }
 
 .list-tasks #add {
+    height: 34px;
     justify-content: center;
     align-items: center;
 }

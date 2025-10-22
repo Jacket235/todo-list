@@ -29,19 +29,21 @@ export function ToDoListTasks() {
     return(
         <div className="list-tasks">
             <span>Tasks</span>
-            <ul>
-                {tasks.map(task => (
-                    <li key={task.id}>
-                        <input value={task.text} onChange={e => handleChange(task.id, e.target.value)} />
-                        <button onClick={() => handleDelete(task.id)}>Delete</button>
+            <div className='container-tasks'>
+                <ul>
+                    {tasks.map(task => (
+                        <li key={task.id}>
+                            <input value={task.text} onChange={e => handleChange(task.id, e.target.value)} />
+                            <button onClick={() => handleDelete(task.id)}>Delete</button>
+                        </li>
+                    ))}
+                    <li id="add">
+                        <button onClick={handleCreateTask}>
+                            <img src='plus-sign.svg' alt="plus sign" width="16px" height="16px" />
+                        </button>
                     </li>
-                ))}
-                <li id="add">
-                    <button onClick={handleCreateTask}>
-                        <img src='plus-sign.svg' alt="plus sign" width="16px" height="16px" />
-                    </button>
-                </li>
-            </ul>
+                </ul>
+            </div>
         </div>
     )
 }
