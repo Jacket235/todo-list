@@ -1,5 +1,5 @@
-import './toDoListTasks.css';
-import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
+import '../styles/to-do-list-tasks.css'
+import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorContext';
 
 export function ToDoListTasks() {
     const { tasks, setTasks } = useTodoListCreatorContext();

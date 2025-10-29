@@ -1,5 +1,5 @@
-import './titleInput.css';
-import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
+import '../styles/title-input.css'
+import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorContext';
 
 export function TitleInput() {
     const { title, setTitle } = useTodoListCreatorContext();

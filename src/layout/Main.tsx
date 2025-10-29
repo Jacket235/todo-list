@@ -1,4 +1,4 @@
-import { ToDoList } from "../components/ToDoList/ToDoList";
+import { ToDoList } from "../components/ToDoList/components/ToDoList";
 import './main.css';
 import TodoListContext from "../context/TodoListContext";
 import { useTodosContext } from "../hooks/useTodosContext";

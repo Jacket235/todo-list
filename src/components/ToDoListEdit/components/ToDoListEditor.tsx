@@ -1,5 +1,4 @@
-import './toDoListEditor.css'
-import TodoListEditorContext from '../../context/TodoListEditorContext';
+import TodoListEditorContext from '../../../context/TodoListEditorContext';
 
 export function ToDoListEdit() {
     return (

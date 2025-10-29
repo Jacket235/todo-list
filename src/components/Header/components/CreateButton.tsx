@@ -1,5 +1,5 @@
-import './createButton.css';
-import { useOverlayContext } from '../../hooks/useOverlayContext';
+import '../styles/create-button.css'
+import { useOverlayContext } from '../../../hooks/useOverlayContext';
 
 export function CreateButton() {
     const { openCreator } = useOverlayContext();

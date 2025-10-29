@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { TodoListType } from "./Types";
-import { ToDoListCreator } from "./components/ToDoListCreator/ToDoListCreator";
-import { ToDoListEdit } from "./components/ToDoListEdit/ToDoListEditor";
+import { ToDoListCreator } from "./components/ToDoListCreator/components/ToDoListCreator";
+import { ToDoListEdit } from "./components/ToDoListEdit/components/ToDoListEditor";
 import TodosContext from "./context/TodosContext";
 import OverlayContext from "./context/OverlayContext";
 

@@ -1,7 +1,7 @@
-import './toDoListAction.css';
-import { useOverlayContext } from '../../hooks/useOverlayContext';
-import { TodoListType } from '../../Types';
-import { useTodoListCreatorContext } from '../../hooks/useTodoListCreatorContext';
+import '../styles/to-do-list-action.css'
+import { useOverlayContext } from '../../../hooks/useOverlayContext';
+import { TodoListType } from '../../../Types';
+import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorContext';
 
 export function ToDoListAction() {
     const toDoList = useTodoListCreatorContext();

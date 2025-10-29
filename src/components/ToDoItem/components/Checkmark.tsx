@@ -1,5 +1,5 @@
-import { CheckmarkType } from '../../Types';
-import './checkmark.css'
+import '../styles/checkmark.css'
+import { CheckmarkType } from '../../../Types';
 
 export function Checkmark({ status }: CheckmarkType) {
     return(

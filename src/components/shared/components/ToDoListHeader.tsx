@@ -1,5 +1,5 @@
-import './toDoListHeader.css';
-import { ToDoListHeaderType } from "../../Types";
+import '../styles/to-do-list-header.css'
+import { ToDoListHeaderType } from "../../../Types";
 
 export function ToDoListHeader({ title, icon, iconAlt, onButtonClick }: ToDoListHeaderType) {
     return (

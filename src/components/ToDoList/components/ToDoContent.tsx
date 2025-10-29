@@ -1,6 +1,6 @@
-import './toDoContent.css';
-import { ToDoItem } from "../ToDoItem/ToDoItem";
-import { useTodoListContext } from "../../hooks/useTodoListContext";
+import '../styles/to-do-content.css'
+import { ToDoItem } from "../../ToDoItem/components/ToDoItem";
+import { useTodoListContext } from "../../../hooks/useTodoListContext";
 
 export function ToDoContent() {
     const { tasks } = useTodoListContext();

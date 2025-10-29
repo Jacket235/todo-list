@@ -1,10 +1,10 @@
-import './toDoListCreator.css'
+import '../styles/to-do-list-creator.css'
 import { ToDoListCreatorContent } from './ToDoListCreatorContent';
 import { TodoListCreatorHeader } from './TodoListCreatorHeader'
-import ToDoListCreatorContext from '../../context/TodoListCreatorContext';
+import ToDoListCreatorContext from '../../../context/TodoListCreatorContext';
 import { useState } from 'react';
-import { Task, TodoListType } from '../../Types';
-import { useTodosContext } from '../../hooks/useTodosContext';
+import { Task, TodoListType } from '../../../Types';
+import { useTodosContext } from '../../../hooks/useTodosContext';
 
 export function ToDoListCreator() {
     const { setTodos } = useTodosContext();

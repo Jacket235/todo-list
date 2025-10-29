@@ -1,4 +1,4 @@
-import './toDoList.css';
+import '../styles/to-do-list.css'
 import { ToDoListTitle } from './ToDoListTitle';
 import { ToDoContent } from './ToDoContent';
 
