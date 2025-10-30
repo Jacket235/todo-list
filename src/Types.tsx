@@ -51,12 +51,6 @@ export type TodoListType = {
     tasks: Task[];
 }
 
-export type TodoListData = {
-    id: string;
-    title: string;
-    tasks: Task[];
-}
-
 export type TodoItemData = {
     idTask: string;
     task: string;

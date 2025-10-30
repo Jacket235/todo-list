@@ -1,6 +1,6 @@
 import React from "react";
-import { TodoListData } from "../Types";
+import { TodoListType } from "../Types";
 
-const TodoListContext = React.createContext<TodoListData | null>(null);
+const TodoListContext = React.createContext<TodoListType | null>(null);
 
 export default TodoListContext;

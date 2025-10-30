@@ -3,10 +3,10 @@ import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorCont
 
 export function TitleInput() {
     const { title, setTitle } = useTodoListCreatorContext();
-
+    
     return(
          <div className='title-input'>
-            <span>Title of the list</span>
+            <span>Title</span>
             <input type='text' value={title} onChange={e => setTitle(e.target.value)} />
         </div>
     );
