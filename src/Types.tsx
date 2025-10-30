@@ -27,7 +27,7 @@ export type ToDoListHeaderType = {
 export type ToDoListCreatorContextType = {
     id: string;
     title: string;
-    setTitle: (value: string) => void;
+    setTitle: React.Dispatch<React.SetStateAction<string>>
     tasks: Task[];
     addTodo: (todo: TodoListType) => void;
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -43,6 +43,11 @@ export type TodosContextType = {
     todos: TodoListType[];
     setTodos: React.Dispatch<React.SetStateAction<TodoListType[]>>;
     toggleTask: (todoId: string, taskId: string) => void;
+}
+
+export type TitleInputType = {
+    title: string;
+    setTitle: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export type TodoListType = {

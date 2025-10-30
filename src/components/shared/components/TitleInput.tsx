@@ -1,9 +1,7 @@
 import '../styles/title-input.css'
-import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorContext';
+import { TitleInputType } from '../../../Types';
 
-export function TitleInput() {
-    const { title, setTitle } = useTodoListCreatorContext();
-    
+export function TitleInput({ title, setTitle }: TitleInputType) {
     return(
          <div className='title-input'>
             <span>Title</span>

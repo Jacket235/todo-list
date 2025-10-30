@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { TodoListType } from "./Types";
 import { ToDoListCreator } from "./components/ToDoListCreator/components/ToDoListCreator";
-import { ToDoListEdit } from "./components/ToDoListEdit/components/ToDoListEditor";
+import { ToDoListEditor } from "./components/ToDoListEdit/components/ToDoListEditor";
 import TodosContext from "./context/TodosContext";
 import OverlayContext from "./context/OverlayContext";
 
@@ -23,7 +23,7 @@ export const AppProviders: React.FC<{children: ReactNode}> = ({ children }) => {
 
     const handleOpenEditor = () => {
         setOverlayVisible(true);
-        setOverlayChild(<ToDoListEdit />);
+        setOverlayChild(<ToDoListEditor />);
     }
 
     const handleToggleTask = (listId: string, taskId: string) => {
