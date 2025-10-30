@@ -4,9 +4,9 @@ import { ToDoListHeader } from "../../shared/components/ToDoListHeader";
 
 export function ToDoListTitle() {
     const { openEditor } = useOverlayContext();
-    const { title } = useTodoListContext();
+    const { id, title, tasks } = useTodoListContext();
 
     return (
-        <ToDoListHeader title={ title } icon='cogwheel.svg' iconAlt='cogwheel' onButtonClick={ openEditor } />
+        <ToDoListHeader title={ title } icon='cogwheel.svg' iconAlt='cogwheel' onButtonClick={() => openEditor(id, title, tasks)} />
     );
 }

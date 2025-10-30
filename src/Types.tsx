@@ -14,7 +14,7 @@ export type OverlayContextType = {
     overlayChild: React.ReactNode;
     closeOverlay: () => void;
     openCreator: () => void;
-    openEditor: () => void;
+    openEditor: (id:string, title: string, tasks: Task[]) => void;
 }
 
 export type ToDoListHeaderType = {
@@ -34,9 +34,11 @@ export type ToDoListCreatorContextType = {
 }
 
 export type ToDoListEditorContextType = {
-    /**
-    * 
-    */
+    id: string;
+    title: string;
+    setTitle: React.Dispatch<React.SetStateAction<string>>;
+    tasks: Task[];
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
 
 export type TodosContextType = {
