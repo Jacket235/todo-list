@@ -41,6 +41,11 @@ export type ToDoListEditorContextType = {
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
 
+export type ToDoListTasksType = {
+    tasks: Task[];
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
 export type TodosContextType = {
     todos: TodoListType[];
     setTodos: React.Dispatch<React.SetStateAction<TodoListType[]>>;

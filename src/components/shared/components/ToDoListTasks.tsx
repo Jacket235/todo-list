@@ -1,9 +1,7 @@
 import '../styles/to-do-list-tasks.css'
-import { useTodoListCreatorContext } from '../../../hooks/useTodoListCreatorContext';
+import { ToDoListTasksType } from '../../../Types';
 
-export function ToDoListTasks() {
-    const { tasks, setTasks } = useTodoListCreatorContext();
-
+export function ToDoListTasks({ tasks, setTasks } : ToDoListTasksType) {
     const handleCreateTask = () => {
         setTasks(prev => {
             return [...prev, {id: crypto.randomUUID(), text: "", status: "incomplete"}]
