@@ -1,0 +1,35 @@
+.editor-list-action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-list-action button {
+    background: none;
+    width: 78px;
+    padding: 6px;
+    border-radius: 5px;
+    transition: background .2s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.default-button-container {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-list-button-container button, .default-button-container button:first-child {
+    border: 2px solid var(--danger);
+}
+
+.default-button-container button:last-child {
+    border: 2px solid var(--success);
+}
+
+.delete-list-button-container button:hover, .default-button-container button:first-child:hover {
+    background: var(--danger-hovered);
+}
+
+.default-button-container button:last-child:hover {
+    background: var(--success-hovered);
+}

@@ -1,12 +1,12 @@
-.list-action {
+.creator-list-action {
     display: flex;
     justify-content: end;
     gap: 8px;
 }
 
-.list-action button {
+.creator-list-action button {
     background: none;
-    width: 57px;
+    width: 78px;
     padding: 6px;
     border-radius: 5px;
     transition: background .2s ease;
@@ -14,18 +14,18 @@
     z-index: 1;
 }
 
-.list-action button:first-child {
+.creator-list-action button:first-child {
     border: 2px solid var(--danger);
 }
 
-.list-action button:last-child {
+.creator-list-action button:last-child {
     border: 2px solid var(--success);
 }
 
-.list-action button:first-child:hover {
+.creator-list-action button:first-child:hover {
     background: var(--danger-hovered);
 }
 
-.list-action button:last-child:hover {
+.creator-list-action button:last-child:hover {
     background: var(--success-hovered);
 }

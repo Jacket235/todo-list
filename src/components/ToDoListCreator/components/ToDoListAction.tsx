@@ -32,7 +32,7 @@ export function ToDoListAction() {
     }
     
     return (
-        <div className="list-action">
+        <div className="creator-list-action">
             <button onClick={handleClose}>Cancel</button>
             <button onClick={handleCreateList}>Create</button>
         </div>
