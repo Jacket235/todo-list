@@ -9,7 +9,7 @@ export function ToDoListAction() {
     const { closeOverlay } = useOverlayContext();
 
     const handleDeleteList = () => {
-        const updated = setTodos(prev => {
+        setTodos(prev => {
             const updated = prev.filter(todo => todo.id !== id)
             localStorage.setItem("todos", JSON.stringify(updated));
 
